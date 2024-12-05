@@ -1,0 +1,17 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "cursor-lens"
+main = ".worker-next/index.mjs"
+
+compatibility_date = "2024-09-26"
+compatibility_flags = ["nodejs_compat"]
+
+# Minification helps to keep the Worker bundle size down and improve start up time.
+minify = true
+
+# Use the new Workers + Assets to host the static frontend files
+assets = { directory = ".worker-next/assets", binding = "ASSETS" }
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cursor-lens"
+database_id = "604d4b58-57df-4f06-b8ca-9e607140821f"

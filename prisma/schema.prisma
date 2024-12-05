@@ -3,11 +3,11 @@
 
 generator client {
   provider = "prisma-client-js"
-  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+	previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -15,11 +15,11 @@ model Log {
   id        String   @id @default(cuid())
   method    String
   url       String
-  headers   Json
-  body      Json
-  response  Json?
+  headers   String
+  body      String
+  response  String?
   timestamp DateTime @default(now())
-  metadata  Json
+  metadata  String
 
   @@index([timestamp])
 }

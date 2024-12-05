@@ -11,11 +11,10 @@
     "test:watch": "vitest --watch",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "seed": "tsx prisma/seed.ts",
-    "update-log-costs": "tsx scripts/update-log-costs.ts"
-  },
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
+    "update-log-costs": "tsx scripts/update-log-costs.ts",
+    "deploy": "cloudflare && wrangler deploy",
+    "preview": "cloudflare && wrangler dev",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts"
   },
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^0.0.17",
@@ -24,6 +23,8 @@
     "@ai-sdk/google-vertex": "^0.0.28",
     "@ai-sdk/mistral": "^0.0.34",
     "@ai-sdk/openai": "^0.0.46",
+    "@opennextjs/cloudflare": "^0.2.1",
+    "@prisma/adapter-d1": "^6.0.1",
     "@prisma/client": "^5.18.0",
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
@@ -81,6 +82,7 @@
     "tailwindcss": "^3.4.1",
     "tsx": "^4.7.1",
     "typescript": "^5",
-    "vitest": "^2.1.2"
+    "vitest": "^2.1.2",
+    "wrangler": "^3.92.0"
   }
 }

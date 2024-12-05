@@ -20,9 +20,10 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["vitest/globals", "vite/client"]
+    "types": ["vitest/globals", "vite/client", "@cloudflare/workers-types/2023-07-01"]
   },
   "include": [
+		"env.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
